@@ -86,7 +86,7 @@ module.exports = function(grunt) {
 		},
 
 		zip: {
-			'reveal-js-presentation.zip': [
+			'djebbz-react-palo-it.zip': [
 				'index.html',
 				'css/**',
 				'js/**',
@@ -98,7 +98,7 @@ module.exports = function(grunt) {
 
 		watch: {
 			main: {
-				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
+				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css'],
 				tasks: 'default'
 			},
 			theme: {

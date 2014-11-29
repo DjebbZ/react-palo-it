@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>React - Web UIs the Right Way ?</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Presenting React.js at Palo IT, on November 27th 2014">
+		<meta name="author" content="Khalid Jebbari">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,10 +15,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/codemirror.css">
+
+		<style type="text/css">
+			.reveal pre { box-shadow: none;}
+
+			button { font-size: 30px;}
+
+			#example-1-code + .CodeMirror,
+			#example-2-code + .CodeMirror,
+			#example-3-code + .CodeMirror,
+			#example-4-code + .CodeMirror {
+				height: 500px;
+			}
+
+			section .example { margin-top: 30px;}
+		</style>
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -40,355 +55,361 @@
 
 		<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>React</h1>
+					<h2>Web UI the Right Way ?</h2>
+					<p>aka Kinda the V of MVC</p>
+					<p>aka Functional Web UIs</p>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Khalid Jebbari<br />
+						aka DjebbZ, <a href="http://twitter.com/Dj3bbZ">@DjebbZ</a><br>
+						November 27th, 2014</small>
 					</p>
-				</section>
-
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
+					<p><small>hosted by Palo IT</small></p>
+					<img src="images/logo-palo-it.png" width="647" height="146" style="border: none; background: none;" alt="Palo IT">
 
 					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+						1. Remercier Palo IT <br>
+						2. Me présenter <br>
+						3. Rappeler que plusieurs attendaient cette préz <br>
 					</aside>
 				</section>
 
-				<!-- Example of nested vertical slides -->
 				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
+					<h2>Disclaimer</h2>
+					<p>
+						Talk greatly inspired by this <a href="https://www.youtube.com/watch?v=x7cQ3mrcKaY">video</a> from React's Lead developer.
+					</p>
+
+					<aside class="notes">
+						Je me suis pas chronométré !
+					</aside>
 				</section>
 
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
+					<h2>Plan</h2>
+					<p>Design of React :</p>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li>Separation of concerns</li>
+						<li>Component oriented</li>
+						<li>Rendering concept</li>
+					</ul>
+					<hr>
+					<p>Going further (if time permits)</p>
+				</section>
+
+				<section>
+					<h2>Best practice</h2>
+					<p>
+						Separate template from view logic (Handlebars, Angular.js template, all HTML-like languages VS Backbone View, Angular.js directive, all display-oriented JS code)
+					</p>
+					<aside class="notes">
+						Ex: template PHP/JSP avec des requêtes à la base de données
+					</aside>
+				</section>
+
+				<section>
+					<h2>Wait !?</h2>
+					<p>
+						Don't they both display the UI ?
+					</p>
+					<p>
+						Display logic and markup are highly cohesive.
+					</p>
+
+					<aside class="notes">
+						Revoyons ensemble une définition importante. (NEXT SLIDE)
+					</aside>
+				</section>
+
+				<section>
+					<h2>Separation of concers :</h2>
+					<q>&ldquo;Reduce coupling, increase cohesion&rdquo;</q>
+
+					<aside class="notes">
+						<p>Pas possible dans le web de faire fonctionner un morceau d'HTML dynamique sans la logique associée :
+						<ul>
+							<li>injection de données</li>
+							<li>affichage conditionnel</li>
+							<li>écoute d'évènements utilisateurs</li>
+							<li>boucle</li>
+							<li>règle métiers</li>
+						</ul>
+						HTML et Javascript complètement interdépendants</p>
+						<p>Augmentation du couplage et réduction de la cohésion. Couplage difficile à déceler (quel markup pour tel Javascript ? quel interaction pour tel markup ?). Dans programmation classique couplage plus facile à détecter : système de module, interface, signatures, code.</p>
+					</aside>
+				</section>
+
+				<section>
+					<p>Templates separate technologies, not concerns. And they're underpowered.</p>
+					<ul>
+						<li>pseudo-programming language</li>
+						<li>lacks some context (behavior)</li>
+						<li>poor reusability</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+					<h2>React</h2>
+					<img src="images/logo_react.png" alt="Logo of React.js" width="400" height="400">
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
+					<aside class="notes">
+						<ul>
+							<li>Libraire javascript pour créer des interfaces web</li>
+							<li>Open-sourcée par Facebook en mai 2013</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
+					<h2>Hello World example</h2>
+					<textarea id="example-1-code"></textarea>
+					<div id="example-1" class="example"></div>
+
+					<aside class="notes">
+						<ul>
+							<li>Réusabilité : ailleurs sur la page</li>
+							<li>Idempotence : chaque appel produira ce résultat ...</li>
+							<li>... résultat déclaratif</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
-					<h2>Global State</h2>
+					<h2>A better syntax : JSX</h2>
+					<textarea id="example-2-code"></textarea>
+					<div id="example-2" class="example"></div>
+
+					<aside class="notes">
+						<ul>
+							<li>Ressemble à de l'HTML</li>
+							<li>Nécessite une phase de compilation</li>
+							<li>JSX est complètement optionel</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Question :</h2>
+					<q>In programming, what's reusable ?</q>
+					<hr>
+					<p class="fragment">Functions...</p>
+					<p class="fragment">... Pure functions !</p>
+
+					<aside class="notes">
+						Le monde merveilleux de la programmation ! <br>
+						Fonctions qui ne dépendent que de leurs arguments, qui sont idempotentes, qui n'ont pas de side-effects... <br>
+						Pas d'état mutable global, de dépendances implicites, de base de données stateful, de side-effects imprévisibles, random, concurrence, etc.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Ce serait bien si...</h2>
+					<p>... on avait des composants graphiques réutilisables, basées sur les principes des fonctions pures, hein ?</p>
+					<p>Hein ouais ce serait bien ?</p>
+					<p><small>Hein ?</small></p>
+				</section>
+
+				<section>
+					<h2>Component <=> Function</h2>
+					<textarea id="example-3-code"></textarea>
+					<div id="example-3" class="example"></div>
+
+					<aside class="notes">
+						<p>Comment passer des paramètres à un composant ?</p>
+						Fonctions : on peut leur passer des paramètres. Paramètres JSX <=> attributs HTML
+					</aside>
+				</section>
+
+				<section>
+					<h2>React components are just<br>idempotent functions.</h2>
+					<p>They <em><b>describe</b></em> the UI at <em><b>any point in time</b></em>,<br> just like the server-rendered page.</p>
+				</section>
+
+				<section>
+					<h2>Managing UI state is hard</h2>
+					<p>Server/client state, user input, complex interactions, etc.</p>
+				</section>
+
+				<section>
+					<h2>Managing state in <span style="text-decoration: underline;">programming</span> is hard</h2>
+
+					<blockquote cite="http://ce.sharif.edu/courses/90-91/1/ce364-1/resources/root/GoTo/Dijkstra">My second remark is that our intellectual powers are rather geared to master static relations and that our powers to visualize processes evolving in time are relatively poorly developed. For that reason we should do (as wise programmers aware of our limitations) our utmost to shorten the conceptual gap between the static program and the dynamic process, to make the correspondence between the program (spread out in text space) and the process (spread out in time) as trivial as possible.</blockquote>
+					<p><small>E. W. Dijkstra, 1968</small></p>
+
+					<aside class="notes">
+						Dijkstra dans sa lettre de 1968 "Goto statement considered harmful" nous dit que programmer dans un environnement en constant changement est difficile. <br>
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>In the 90s, it was easier</h2>
+					<p>Just refresh the page when data changes !</p>
+
+					<aside class="notes">
+						Les templates affichent les données déjà calculées dans la partie métier. <br>
+						C'est ce que fait React !
+					</aside>
+				</section>
+
+				<section>
+					React re-renders the entire component.
+
+					<aside class="notes">
+						Quand l'état du composant changes, React le rend entièrement, basé sur la description faite dans la méthode "render"
+					</aside>
+				</section>
+
+				<section>
+					<h2>React Data-flow</h2>
+					<p>Data flows from top to bottom. Easy.</p>
+					<img src="images/one-way.png" alt="One way flow of data" width="800" height="545">
+				</section>
+
+				<section>
+					<h2>Everything is declarative</h2>
+					<textarea id="example-4-code"></textarea>
+					<div id="example-4" class="example"></div>
+
+					<aside class="notes">
+						<ul>
+							<li>Composant HelloWorld externe</li>
+							<li>État explicite</li>
+							<li>Imbrication d'un composant externe</li>
+							<li>Gestion d'état explicite</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Re-rendering ? Expensive and <br> inefficient !</h2>
+					<q>&ldquo;And doesn't it mess up form fields and scroll position ?&rdquo;</q>
+				</section>
+
+				<section>
+					<p>Indeed, the DOM is slow.</p>
+					<p class="fragment">Meet the virtual DOM.</p>
+				</section>
+
+				<section>
+					<p>On every update, React :</p>
 					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
-
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-					</p>
-				</section>
-
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-current-blue">highlight-current-blue</p>
-					</section>
-				</section>
-
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
+						<ul>
+							<li>builds a new virtual DOM subtree</li>
+							<li class="fragment">... diffs it with the old one</li>
+							<li class="fragment">... compute the minial set of DOM mutations and puts them in a queue</li>
+							<li class="fragment">... and batch executes all updates</li>
+						</ul>
 					</p>
 				</section>
 
 				<section>
-					<h2>Stellar Links</h2>
+					<img src="images/diff-virtual-dom.png" alt="Diff algorithm" width="800" height="351">
+				</section>
+
+				<section>
+					<p>Diff is fast because :</p>
 					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
+						<li>it's working on pure Javascript data structures, not the slow DOM</li>
+						<li>the algorithm used is O(n)</li>
+						<li>you can easily short-circuit it for even better performance</li>
 					</ul>
 				</section>
 
 				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+					<p>Virtual DOM enables :</p>
+					<ul>
+						<li>unit testable components</li>
+						<li>rendering in Node.js</li>
+						<li>the Holy Grail</li>
+						<li>rendering SVG, VML and Canvas</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>React in the real world</h2>
+					<p class="fragment">Used by numerous and big names on the web. (Facebook, Instagram, AirBnB, Khan Academy, Mozilla, ...). It's solid.</p>
+					<p class="fragment">Using it since 11 months. All good</p>
+				</section>
+
+				<section>
+					<h2>And the other JS libs ?</h2>
+
+					<aside class="notes">
+						Backbone : se marie bien avec vu qu'aucun n'impose de structure <br>
+						Angular : C'est comme une directive Angular. Mais avec moins de complexités ($scope, transclusion, link et compile functions, etc.). Pas de data-binding dans les deux sens.Possibilité d'utiliser des composants React à la place de directives Angular. <br>
+						Ember : Peut s'utiliser à la place des vues/templates Ember. La core team d'Ember va sûrement reprendre le concept de Virtual DOM.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Is React perfect ?</h2>
+					<p>No. Nothing is perfect :</p>
+					<ul>
+						<li>Lacks CSS management to make real components.</li>
+						<li>Some overlap with WebComponents</li>
+						<li>JSX is a nice syntax, but needs tooling</li>
+						<li>No full-stack front-end framework using React</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>But React is very good</h2>
+					<p>Stateless over stateful</p>
+					<p>Explicit state management over uncontrolled mutability</p>
+					<p>Simple data-flow over unpredictable cascading changes</p>
+					<p>Components <em>really</em> reusable</p>
+					<p>Not a full stack framework :)</p>
+				</section>
+
+				<section>
+					<h1>Questions ?</h1>
+					<p><small>Images courtesy of <a href="http://twitter.com/bobylito">@bobylito</a></small></p>
 				</section>
 
 			</div>
 
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
-
-		<script>
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-
-		</script>
-
 	</body>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
+
+	<script>
+
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: false,
+			progress: true,
+			history: true,
+			slideNumber: true,
+			center: true,
+
+			transition: 'none',
+
+			// Optional libraries used to extend on reveal.js
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+			]
+		});
+
+	</script>
+
+	<script src="js/examples.js"></script>
+	<script src="js/codemirror.js"></script>
+	<script src="js/javascript.js"></script>
+	<script type="text/javascript">
+		["example-1-code", "example-2-code", "example-3-code", "example-4-code"].forEach(function(id) {
+			// CodeMirror is the best I found to highlight JSX code out of the box.
+			// prismjs and highlight.js don't like HTML-like code inside JS
+			CodeMirror.fromTextArea(document.getElementById(id), {
+				mode: "javascript"
+			});
+		})
+	</script>
 </html>
